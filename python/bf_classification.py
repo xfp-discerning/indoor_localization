@@ -135,8 +135,8 @@ if __name__ == "__main__":
         os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
     # os.environ['TF_CPP_MIN_LOG_LEVEL']='2'  # supress warning messages
     import tensorflow as tf
-    from keras.layers import Dense, Dropout
-    from keras.models import Sequential, load_model
+    from tensorflow.keras.layers import Dense, Dropout
+    from tensorflow.keras.models import Sequential, load_model
     
     train_df = pd.read_csv(path_train,header = 0) # pass header=0 to be able to replace existing names 
     train_df = train_df[:19930]
@@ -227,8 +227,8 @@ if __name__ == "__main__":
     11: 23
     12: 24
     '''
-    import keras.backend as K
-    from keras.metrics import categorical_accuracy
+    import tensorflow.keras.backend as K
+    from tensorflow.keras.metrics import categorical_accuracy
 
     def bld_idx(x):
         def b0(): return tf.constant(0, dtype=x.dtype)
